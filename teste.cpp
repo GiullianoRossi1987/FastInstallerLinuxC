@@ -1,13 +1,9 @@
 #include <iostream>
-using namespace std;
+#include "config.cpp"
+// using namespace std;
 
 int main(){
-	char data[30] = "Ola;Eu sou giulliano; ola;\n";
-	for(int i = 0; i < 30; i++){
-		char chr = (char)data[i];
-		if(chr == ';') cout << "Fez" << endl;
-		else if(chr == '\n') cout << "Ok" << endl;
-		else cout << "Normal" << endl;
-	}
+	config::ConfigReader cr("config.conf");
+    std::cout << cr.getPacman(true) << std::endl;
 	return 0;
 }
